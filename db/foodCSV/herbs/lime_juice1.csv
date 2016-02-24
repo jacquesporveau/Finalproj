@@ -1,0 +1,44 @@
+Source: USDA National Nutrient Database for Standard Reference 28 Software v.2.3.7.5
+Basic Report
+Report Run at: February 22, 2016 16:29 EST
+"Nutrient data for: 09161, Lime juice, canned or bottled, unsweetened"
+Nutrient,Unit,1Value per 100 g,"0.5 cup = 123.0g","0.5 fl oz = 15.4g",
+Proximates
+"Water",g,92.52,113.80,14.25
+"Energy",kcal,21,26,3
+"Protein",g,0.25,0.31,0.04
+"Total lipid (fat)",g,0.23,0.28,0.04
+"Carbohydrate, by difference",g,6.69,8.23,1.03
+"Fiber, total dietary",g,0.4,0.5,0.1
+"Sugars, total",g,1.37,1.69,0.21
+Minerals
+"Calcium, Ca",mg,12,15,2
+"Iron, Fe",mg,0.23,0.28,0.04
+"Magnesium, Mg",mg,7,9,1
+"Phosphorus, P",mg,10,12,2
+"Potassium, K",mg,75,92,12
+"Sodium, Na",mg,16,20,2
+"Zinc, Zn",mg,0.06,0.07,0.01
+Vitamins
+"Vitamin C, total ascorbic acid",mg,6.4,7.9,1.0
+"Thiamin",mg,0.033,0.041,0.005
+"Riboflavin",mg,0.003,0.004,0.000
+"Niacin",mg,0.163,0.200,0.025
+"Vitamin B-6",mg,0.027,0.033,0.004
+"Folate, DFE",µg,8,10,1
+"Vitamin B-12",µg,0.00,0.00,0.00
+"Vitamin A, RAE",µg,1,1,0
+"Vitamin A, IU",IU,16,20,2
+"Vitamin E (alpha-tocopherol)",mg,0.12,0.15,0.02
+"Vitamin D (D2 + D3)",µg,0.0,0.0,0.0
+"Vitamin D",IU,0,0,0
+"Vitamin K (phylloquinone)",µg,0.5,0.6,0.1
+Lipids
+"Fatty acids, total saturated",g,0.026,0.032,0.004
+"Fatty acids, total monounsaturated",g,0.022,0.027,0.003
+"Fatty acids, total polyunsaturated",g,0.064,0.079,0.010
+"Fatty acids, total trans",g,0.000,0.000,0.000
+"Cholesterol",mg,0,0,0
+Amino Acids
+Other
+"Caffeine",mg,0,0,0
