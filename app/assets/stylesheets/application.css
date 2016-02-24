@@ -140,3 +140,8 @@ html {
 .carry-on {
   font-size: 20px;
 }
+ 
+ #nutritional-label {
+   background-color: white;
+   width: 302px;
+ }
