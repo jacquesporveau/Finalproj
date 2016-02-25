@@ -11,7 +11,7 @@ class SmoothiesController < ApplicationController
     @cals = (@carbs[0] * 4) + (@fat[0] * 9) + (@protein[0] * 4)
     @cals_from_fat = @fat[0] * 9
     @vitC = Nutrient.where(name: 'Vitamin C, total ascorbic acid').limit(1).pluck(:value)
-    @vitA = Nutrient.where(name: 'Vitamin A, RAE').limit(1).pluck(:value)
+    @vitA = Nutrient.where(name: 'Vitamin A, IU').limit(1).pluck(:value)
     @calcium = Nutrient.where(name: 'Calcium, Ca').limit(1).pluck(:value)
     @iron = Nutrient.where(name: 'Iron, Fe').limit(1).pluck(:value)
 
@@ -31,14 +31,14 @@ class SmoothiesController < ApplicationController
     'valueTransFat' => 0,
     'valueCholesterol' => Nutrient.where(name: 'Cholesterol').limit(1).pluck(:value),
     'valueSodium' => Nutrient.where(name: 'Sodium, Na').limit(1).pluck(:value),
-    'valueTotalCarb' => Nutrient.where(name: 'Fiber, total dietary').limit(1).pluck(:value),
-    'valueFibers' => Nutrient.where(name: 'Cholesterol').limit(1).pluck(:value),
+    'valueTotalCarb' => Nutrient.where(name: 'Carbohydrate, by difference').limit(1).pluck(:value),
+    'valueFibers' => Nutrient.where(name: 'Fiber, total dietary').limit(1).pluck(:value),
     'valueSugars' => Nutrient.where(name: 'Sugars, total').limit(1).pluck(:value),
     'valueProteins' => @protein,
-    'valueVitaminA' => @vitA[0].to_f / 3000,
-    'valueVitaminC' => @vitC[0].to_f / 85,
-    'valueCalcium' => @calcium[0].to_f / 1000,
-    'valueIron' => @iron[0].to_f / 16
+    'valueVitaminA' => (@vitA[0].to_f / 3000) * 100,
+    'valueVitaminC' => (@vitC[0].to_f / 85) * 100,
+    'valueCalcium' => (@calcium[0].to_f / 1000) * 100,
+    'valueIron' => (@iron[0].to_f / 16) * 100
   }
   end
 end
