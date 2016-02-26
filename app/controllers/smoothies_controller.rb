@@ -15,121 +15,121 @@ class SmoothiesController < ApplicationController
     # FRUIT VARIABLES
 
 
-    @sat_fatfruit = Food.where(Name: params["fruit"]).limit(1).pluck(:SaturatedFats)
-    @trans_fatfruit = Food.where(Name: params["fruit"]).limit(1).pluck(:Trans)
+    @sat_fatfruit = Food.where(name: params["fruit"]).limit(1).pluck(:saturatedFats)
+    @trans_fatfruit = Food.where(name: params["fruit"]).limit(1).pluck(:trans)
     @fatfruit = @trans_fatfruit[0] + @sat_fatfruit[0]
-    @ingredientfruit = Food.where(Name: params["fruit"]).limit(1).pluck(:Name)
-    @potassiumfruit = Food.where(Name: params["fruit"]).limit(1).pluck(:Potassium)
-    @carbsfruit = Food.where(Name: params["fruit"]).limit(1).pluck(:Carbohydrate)
-    @proteinfruit = Food.where(Name: params["fruit"]).limit(1).pluck(:Protein)
+    @ingredientfruit = Food.where(name: params["fruit"]).limit(1).pluck(:name)
+    @potassiumfruit = Food.where(name: params["fruit"]).limit(1).pluck(:potassium)
+    @carbsfruit = Food.where(name: params["fruit"]).limit(1).pluck(:carbohydrate)
+    @proteinfruit = Food.where(name: params["fruit"]).limit(1).pluck(:protein)
     # Calories = Carbs * 4 + Fat * 9 + Protein * 4
     @calsfruit = (@carbsfruit[0] * 4) + (@fatfruit * 9) + (@proteinfruit[0] * 4)
     @cals_from_fatfruit = @fatfruit * 9
-    @cholesterolfruit = Food.where(Name: params["fruit"]).limit(1).pluck(:Cholesterol)
-    @sodiumfruit = Food.where(Name: params["fruit"]).limit(1).pluck(:Sodium)
-    @fibersfruit = Food.where(Name: params["fruit"]).limit(1).pluck(:Fiber)
-    @sugarsfruit = Food.where(Name: params["fruit"]).limit(1).pluck(:Sugars)
+    @cholesterolfruit = Food.where(name: params["fruit"]).limit(1).pluck(:cholesterol)
+    @sodiumfruit = Food.where(name: params["fruit"]).limit(1).pluck(:sodium)
+    @fibersfruit = Food.where(name: params["fruit"]).limit(1).pluck(:fiber)
+    @sugarsfruit = Food.where(name: params["fruit"]).limit(1).pluck(:sugars)
 
-    @vitCfruit = Food.where(Name: params["fruit"]).limit(1).pluck(:VitaminC)
-    @vitAfruit = Food.where(Name: params["fruit"]).limit(1).pluck(:VitaminA_IU)
-    @calciumfruit = Food.where(Name: params["fruit"]).limit(1).pluck(:Calcium)
-    @ironfruit = Food.where(Name: params["fruit"]).limit(1).pluck(:Iron)
+    @vitCfruit = Food.where(name: params["fruit"]).limit(1).pluck(:vitaminc)
+    @vitAfruit = Food.where(name: params["fruit"]).limit(1).pluck(:vitamina_iu)
+    @calciumfruit = Food.where(name: params["fruit"]).limit(1).pluck(:calcium)
+    @ironfruit = Food.where(name: params["fruit"]).limit(1).pluck(:iron)
 
 
     # VEGGIE VARAIBLES
 
 
-    @sat_fatveg = Food.where(Name: params["veg"]).limit(1).pluck(:SaturatedFats)
-    @trans_fatveg = Food.where(Name: params["veg"]).limit(1).pluck(:Trans)
+    @sat_fatveg = Food.where(name: params["veg"]).limit(1).pluck(:saturatedFats)
+    @trans_fatveg = Food.where(name: params["veg"]).limit(1).pluck(:trans)
     @fatveg = @trans_fatveg[0] + @sat_fatveg[0]
-    @ingredientveg = Food.where(Name: params["veg"]).limit(1).pluck(:Name)
-    @potassiumveg = Food.where(Name: params["veg"]).limit(1).pluck(:Potassium)
-    @carbsveg = Food.where(Name: params["veg"]).limit(1).pluck(:Carbohydrate)
-    @proteinveg = Food.where(Name: params["veg"]).limit(1).pluck(:Protein)
+    @ingredientveg = Food.where(name: params["veg"]).limit(1).pluck(:name)
+    @potassiumveg = Food.where(name: params["veg"]).limit(1).pluck(:potassium)
+    @carbsveg = Food.where(name: params["veg"]).limit(1).pluck(:carbohydrate)
+    @proteinveg = Food.where(name: params["veg"]).limit(1).pluck(:protein)
     # Calories = Carbs * 4 + Fat * 9 + Protein * 4
     @calsveg = (@carbsveg[0] * 4) + (@fatveg * 9) + (@proteinveg[0] * 4)
     @cals_from_fatveg = @fatveg * 9
-    @cholesterolveg = Food.where(Name: params["veg"]).limit(1).pluck(:Cholesterol)
-    @sodiumveg = Food.where(Name: params["veg"]).limit(1).pluck(:Sodium)
-    @fibersveg = Food.where(Name: params["veg"]).limit(1).pluck(:Fiber)
-    @sugarsveg = Food.where(Name: params["veg"]).limit(1).pluck(:Sugars)
+    @cholesterolveg = Food.where(name: params["veg"]).limit(1).pluck(:cholesterol)
+    @sodiumveg = Food.where(name: params["veg"]).limit(1).pluck(:sodium)
+    @fibersveg = Food.where(name: params["veg"]).limit(1).pluck(:fiber)
+    @sugarsveg = Food.where(name: params["veg"]).limit(1).pluck(:sugars)
 
-    @vitCveg = Food.where(Name: params["veg"]).limit(1).pluck(:VitaminC)
-    @vitAveg = Food.where(Name: params["veg"]).limit(1).pluck(:VitaminA_IU)
-    @calciumveg = Food.where(Name: params["veg"]).limit(1).pluck(:Calcium)
-    @ironveg = Food.where(Name: params["veg"]).limit(1).pluck(:Iron)
+    @vitCveg = Food.where(name: params["veg"]).limit(1).pluck(:vitaminc)
+    @vitAveg = Food.where(name: params["veg"]).limit(1).pluck(:vitamina_iu)
+    @calciumveg = Food.where(name: params["veg"]).limit(1).pluck(:calcium)
+    @ironveg = Food.where(name: params["veg"]).limit(1).pluck(:iron)
 
 
     # LIQUID VARIABLES
 
 
-    @sat_fatliquid = Food.where(Name: params["liquid"]).limit(1).pluck(:SaturatedFats)
-    @trans_fatliquid = Food.where(Name: params["liquid"]).limit(1).pluck(:Trans)
+    @sat_fatliquid = Food.where(name: params["liquid"]).limit(1).pluck(:saturatedFats)
+    @trans_fatliquid = Food.where(name: params["liquid"]).limit(1).pluck(:trans)
     @fatliquid = @trans_fatliquid[0] + @sat_fatliquid[0]
-    @ingredientliquid = Food.where(Name: params["liquid"]).limit(1).pluck(:Name)
-    @potassiumliquid = Food.where(Name: params["liquid"]).limit(1).pluck(:Potassium)
-    @carbsliquid = Food.where(Name: params["liquid"]).limit(1).pluck(:Carbohydrate)
-    @proteinliquid = Food.where(Name: params["liquid"]).limit(1).pluck(:Protein)
+    @ingredientliquid = Food.where(name: params["liquid"]).limit(1).pluck(:name)
+    @potassiumliquid = Food.where(name: params["liquid"]).limit(1).pluck(:potassium)
+    @carbsliquid = Food.where(name: params["liquid"]).limit(1).pluck(:carbohydrate)
+    @proteinliquid = Food.where(name: params["liquid"]).limit(1).pluck(:protein)
     # Calories = Carbs * 4 + Fat * 9 + Protein * 4
     @calsliquid = (@carbsliquid[0] * 4) + (@fatliquid * 9) + (@proteinliquid[0] * 4)
     @cals_from_fatliquid = @fatliquid * 9
-    @cholesterolliquid = Food.where(Name: params["liquid"]).limit(1).pluck(:Cholesterol)
-    @sodiumliquid = Food.where(Name: params["liquid"]).limit(1).pluck(:Sodium)
-    @fibersliquid = Food.where(Name: params["liquid"]).limit(1).pluck(:Fiber)
-    @sugarsliquid = Food.where(Name: params["liquid"]).limit(1).pluck(:Sugars)
+    @cholesterolliquid = Food.where(name: params["liquid"]).limit(1).pluck(:cholesterol)
+    @sodiumliquid = Food.where(name: params["liquid"]).limit(1).pluck(:sodium)
+    @fibersliquid = Food.where(name: params["liquid"]).limit(1).pluck(:fiber)
+    @sugarsliquid = Food.where(name: params["liquid"]).limit(1).pluck(:sugars)
 
-    @vitCliquid = Food.where(Name: params["liquid"]).limit(1).pluck(:VitaminC)
-    @vitAliquid = Food.where(Name: params["liquid"]).limit(1).pluck(:VitaminA_IU)
-    @calciumliquid = Food.where(Name: params["liquid"]).limit(1).pluck(:Calcium)
-    @ironliquid = Food.where(Name: params["liquid"]).limit(1).pluck(:Iron)
+    @vitCliquid = Food.where(name: params["liquid"]).limit(1).pluck(:vitaminc)
+    @vitAliquid = Food.where(name: params["liquid"]).limit(1).pluck(:vitamina_iu)
+    @calciumliquid = Food.where(name: params["liquid"]).limit(1).pluck(:calcium)
+    @ironliquid = Food.where(name: params["liquid"]).limit(1).pluck(:iron)
 
 
     # SEED/NUT VARIABLES
 
 
-    @sat_fatseednut = Food.where(Name: params["seednut"]).limit(1).pluck(:SaturatedFats)
-    @trans_fatseednut = Food.where(Name: params["seednut"]).limit(1).pluck(:Trans)
+    @sat_fatseednut = Food.where(name: params["seednut"]).limit(1).pluck(:saturatedFats)
+    @trans_fatseednut = Food.where(name: params["seednut"]).limit(1).pluck(:trans)
     @fatseednut = @trans_fatseednut[0] + @sat_fatseednut[0]
-    @ingredientseednut = Food.where(Name: params["seednut"]).limit(1).pluck(:Name)
-    @potassiumseednut = Food.where(Name: params["seednut"]).limit(1).pluck(:Potassium)
-    @carbsseednut = Food.where(Name: params["seednut"]).limit(1).pluck(:Carbohydrate)
-    @proteinseednut = Food.where(Name: params["seednut"]).limit(1).pluck(:Protein)
+    @ingredientseednut = Food.where(name: params["seednut"]).limit(1).pluck(:name)
+    @potassiumseednut = Food.where(name: params["seednut"]).limit(1).pluck(:potassium)
+    @carbsseednut = Food.where(name: params["seednut"]).limit(1).pluck(:carbohydrate)
+    @proteinseednut = Food.where(name: params["seednut"]).limit(1).pluck(:protein)
     # Calories = Carbs * 4 + Fat * 9 + Protein * 4
     @calsseednut = (@carbsseednut[0] * 4) + (@fatseednut * 9) + (@proteinseednut[0] * 4)
     @cals_from_fatseednut = @fatseednut * 9
-    @cholesterolseednut = Food.where(Name: params["seednut"]).limit(1).pluck(:Cholesterol)
-    @sodiumseednut = Food.where(Name: params["seednut"]).limit(1).pluck(:Sodium)
-    @fibersseednut = Food.where(Name: params["seednut"]).limit(1).pluck(:Fiber)
-    @sugarsseednut = Food.where(Name: params["seednut"]).limit(1).pluck(:Sugars)
+    @cholesterolseednut = Food.where(name: params["seednut"]).limit(1).pluck(:cholesterol)
+    @sodiumseednut = Food.where(name: params["seednut"]).limit(1).pluck(:sodium)
+    @fibersseednut = Food.where(name: params["seednut"]).limit(1).pluck(:fiber)
+    @sugarsseednut = Food.where(name: params["seednut"]).limit(1).pluck(:sugars)
 
-    @vitCseednut = Food.where(Name: params["seednut"]).limit(1).pluck(:VitaminC)
-    @vitAseednut = Food.where(Name: params["seednut"]).limit(1).pluck(:VitaminA_IU)
-    @calciumseednut = Food.where(Name: params["seednut"]).limit(1).pluck(:Calcium)
-    @ironseednut = Food.where(Name: params["seednut"]).limit(1).pluck(:Iron)
+    @vitCseednut = Food.where(name: params["seednut"]).limit(1).pluck(:vitaminc)
+    @vitAseednut = Food.where(name: params["seednut"]).limit(1).pluck(:vitamina_iu)
+    @calciumseednut = Food.where(name: params["seednut"]).limit(1).pluck(:calcium)
+    @ironseednut = Food.where(name: params["seednut"]).limit(1).pluck(:iron)
 
 
     #HERB
 
 
-    @sat_fatherb = Food.where(Name: params["herb"]).limit(1).pluck(:SaturatedFats)
-    @trans_fatherb = Food.where(Name: params["herb"]).limit(1).pluck(:Trans)
+    @sat_fatherb = Food.where(name: params["herb"]).limit(1).pluck(:saturatedFats)
+    @trans_fatherb = Food.where(name: params["herb"]).limit(1).pluck(:trans)
     @fatherb = @trans_fatherb[0] + @sat_fatherb[0]
-    @ingredientherb = Food.where(Name: params["herb"]).limit(1).pluck(:Name)
-    @potassiumherb = Food.where(Name: params["herb"]).limit(1).pluck(:Potassium)
-    @carbsherb = Food.where(Name: params["herb"]).limit(1).pluck(:Carbohydrate)
-    @proteinherb = Food.where(Name: params["herb"]).limit(1).pluck(:Protein)
+    @ingredientherb = Food.where(name: params["herb"]).limit(1).pluck(:name)
+    @potassiumherb = Food.where(name: params["herb"]).limit(1).pluck(:potassium)
+    @carbsherb = Food.where(name: params["herb"]).limit(1).pluck(:carbohydrate)
+    @proteinherb = Food.where(name: params["herb"]).limit(1).pluck(:protein)
     # Calories = Carbs * 4 + Fat * 9 + Protein * 4
     @calsherb = (@carbsherb[0] * 4) + (@fatherb * 9) + (@proteinherb[0] * 4)
     @cals_from_fatherb = @fatherb * 9
-    @cholesterolherb = Food.where(Name: params["herb"]).limit(1).pluck(:Cholesterol)
-    @sodiumherb = Food.where(Name: params["herb"]).limit(1).pluck(:Sodium)
-    @fibersherb = Food.where(Name: params["herb"]).limit(1).pluck(:Fiber)
-    @sugarsherb = Food.where(Name: params["herb"]).limit(1).pluck(:Sugars)
+    @cholesterolherb = Food.where(name: params["herb"]).limit(1).pluck(:cholesterol)
+    @sodiumherb = Food.where(name: params["herb"]).limit(1).pluck(:sodium)
+    @fibersherb = Food.where(name: params["herb"]).limit(1).pluck(:fiber)
+    @sugarsherb = Food.where(name: params["herb"]).limit(1).pluck(:sugars)
 
-    @vitCherb = Food.where(Name: params["herb"]).limit(1).pluck(:VitaminC)
-    @vitAherb = Food.where(Name: params["herb"]).limit(1).pluck(:VitaminA_IU)
-    @calciumherb = Food.where(Name: params["herb"]).limit(1).pluck(:Calcium)
-    @ironherb = Food.where(Name: params["herb"]).limit(1).pluck(:Iron)
+    @vitCherb = Food.where(name: params["herb"]).limit(1).pluck(:vitaminc)
+    @vitAherb = Food.where(name: params["herb"]).limit(1).pluck(:vitamina_iu)
+    @calciumherb = Food.where(name: params["herb"]).limit(1).pluck(:calcium)
+    @ironherb = Food.where(name: params["herb"]).limit(1).pluck(:iron)
 
 
 
