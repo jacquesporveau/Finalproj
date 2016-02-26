@@ -11,20 +11,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160225003404) do
+ActiveRecord::Schema.define(version: 20160225203944) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "nutrients", force: true do |t|
-    t.string   "name"
-    t.float    "value"
-    t.string   "unit"
-    t.integer  "food_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "foods", force: true do |t|
+    t.string "Name"
+    t.float  "Water"
+    t.float  "Energy"
+    t.float  "Protein"
+    t.float  "Totallipidfat"
+    t.float  "Carbohydrate"
+    t.float  "Fiber"
+    t.float  "Sugars"
+    t.float  "Minerals"
+    t.float  "Calcium"
+    t.float  "Iron"
+    t.float  "Magnesium"
+    t.float  "Phosphorus"
+    t.float  "Potassium"
+    t.float  "Sodium"
+    t.float  "Zinc"
+    t.float  "VitaminC"
+    t.float  "Thiamin"
+    t.float  "Riboflavin"
+    t.float  "Niacin"
+    t.float  "VitaminB6"
+    t.float  "Folate"
+    t.float  "VitaminB12"
+    t.float  "VitaminA_IU"
+    t.float  "VitaminE"
+    t.float  "VitaminD"
+    t.float  "VitaminK"
+    t.float  "Lipids"
+    t.float  "SaturatedFats"
+    t.float  "Monounsaturated"
+    t.float  "Polyunsaturated"
+    t.float  "Trans"
+    t.float  "Cholesterol"
+    t.float  "AminoAcids"
   end
-
-  add_index "nutrients", ["food_id"], name: "index_nutrients_on_food_id", using: :btree
 
 end
