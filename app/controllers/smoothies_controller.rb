@@ -35,6 +35,10 @@ class SmoothiesController < ApplicationController
     @calciumfruit = Food.where(name: params["fruit"]).limit(1).pluck(:calcium)
     @ironfruit = Food.where(name: params["fruit"]).limit(1).pluck(:iron)
 
+    if @ingredientfruit[0] == "default"
+      @ingredientfruit[0] = ""
+    end
+
 
     # VEGGIE VARAIBLES
 
@@ -58,6 +62,10 @@ class SmoothiesController < ApplicationController
     @vitAveg = Food.where(name: params["veg"]).limit(1).pluck(:vitamina_iu)
     @calciumveg = Food.where(name: params["veg"]).limit(1).pluck(:calcium)
     @ironveg = Food.where(name: params["veg"]).limit(1).pluck(:iron)
+
+    if @ingredientveg[0] == "default"
+      @ingredientveg[0] = ""
+    end
 
 
     # LIQUID VARIABLES
@@ -83,6 +91,10 @@ class SmoothiesController < ApplicationController
     @calciumliquid = Food.where(name: params["liquid"]).limit(1).pluck(:calcium)
     @ironliquid = Food.where(name: params["liquid"]).limit(1).pluck(:iron)
 
+    if @ingredientliquid[0] == "default"
+      @ingredientliquid[0] = ""
+    end
+
 
     # SEED/NUT VARIABLES
 
@@ -106,6 +118,10 @@ class SmoothiesController < ApplicationController
     @vitAseednut = Food.where(name: params["seednut"]).limit(1).pluck(:vitamina_iu)
     @calciumseednut = Food.where(name: params["seednut"]).limit(1).pluck(:calcium)
     @ironseednut = Food.where(name: params["seednut"]).limit(1).pluck(:iron)
+
+    if @ingredientseednut[0] == "default"
+      @ingredientseednut[0] = ""
+    end
 
 
     #HERB
@@ -131,13 +147,19 @@ class SmoothiesController < ApplicationController
     @calciumherb = Food.where(name: params["herb"]).limit(1).pluck(:calcium)
     @ironherb = Food.where(name: params["herb"]).limit(1).pluck(:iron)
 
+    if @ingredientherb[0] == "default"
+      @ingredientherb[0] = ""
+    end
 
+    def ingredlistcrafter
+      "#{@ingredientfruit[0]} #{@ingredientveg[0]} #{@ingredientliquid[0]} #{@ingredientseednut[0]} #{@ingredientherb[0]}"
+    end
 
     render json: {
       'width' => 280,
       'showServingUnitQuantity' => false,
       'itemName' => 'Smoothie',
-      'ingredientList' => @ingredientfruit + @ingredientveg + @ingredientliquid + @ingredientseednut +@ingredientherb,
+      'ingredientList' => ingredlistcrafter,
 
       'showPolyFat' => false,
       'showMonoFat' => false,
