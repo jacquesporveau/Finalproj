@@ -5,4 +5,5 @@
   get '/nutritional' => 'smoothies#nutritional'
   get '/nutritionaljson' => 'smoothies#nutritionaljson'
 
+
 end

@@ -1,3 +1,0 @@
-class Nutrient < ActiveRecord::Base
-  belongs_to :food
-end
