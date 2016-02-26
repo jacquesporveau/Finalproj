@@ -2,7 +2,7 @@ var Form = React.createClass({
   render: function() {
     return (
     <div className="form-contain">
-      <form acceptCharset="UTF-8" action="" className="search-form" method="get">
+      <form acceptCharset="UTF-8" action="/nutritional" className="search-form" method="get">
       <label className="form-label "for="fruit_query">Main Fruit Ingredient</label>
       <select className="form-entry" name="fruit">
         <option selected disabled>- Please Select -</option>
@@ -10,7 +10,7 @@ var Form = React.createClass({
         <option>Goji Berries</option>
         <option>Blue Berries</option>
         <option>Starwberries</option>
-        <option>Bananas</option>
+        <option>Banana</option>
         <option>Raspberries</option>
         <option>Apples</option>
         <option>Pears</option>
@@ -41,7 +41,7 @@ var Form = React.createClass({
         <option>Peppers</option>
       </select>
       <label className="form-label "for="liquid_query">Liquid/Base</label>
-      <select className="form-entry" name="liqud">
+      <select className="form-entry" name="liquid">
         <option selected disabled>- Please Select -</option>
         <option>Water</option>
         <option>Almond</option>
@@ -55,8 +55,8 @@ var Form = React.createClass({
         <option>Lemon Juice</option>
         <option>Lime Juice</option>
       </select>
-      <label className="form-label "for="seed-nut_query">Seed/Nut Ingredient</label>
-      <select className="form-entry" name="seeds">
+      <label className="form-label "for="seednut_query">Seed/Nut Ingredient</label>
+      <select className="form-entry" name="seednut">
         <option selected disabled>- Please Select -</option>
         <option>Chia</option>
         <option>Flax</option>
@@ -71,7 +71,7 @@ var Form = React.createClass({
         <option>Sachainchi</option>
       </select>
       <label className="form-label "for="herb_query">Main Herb/Flavouring Ingredient</label>
-      <select className="form-entry" name="herbs">
+      <select className="form-entry" name="herb">
         <option selected disabled>- Please Select -</option>
         <option>Mint</option>
         <option>Basil</option>
