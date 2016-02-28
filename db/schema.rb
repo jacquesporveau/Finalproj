@@ -11,60 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160226012140) do
+ActiveRecord::Schema.define(version: 20160225203944) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "foods", force: true do |t|
-    t.string "name"
-    t.float  "water"
-    t.float  "energy"
-    t.float  "protein"
-    t.float  "totallipidfat"
-    t.float  "carbohydrate"
-    t.float  "fiber"
-    t.float  "sugars"
-    t.float  "minerals"
-    t.float  "calcium"
-    t.float  "iron"
-    t.float  "magnesium"
-    t.float  "phosphorus"
-    t.float  "potassium"
-    t.float  "sodium"
-    t.float  "zinc"
-    t.float  "vitaminc"
-    t.float  "thiamin"
-    t.float  "riboflavin"
-    t.float  "niacin"
-    t.float  "vitaminb6"
-    t.float  "folate"
-    t.float  "vitaminb12"
-    t.float  "vitamina_iu"
-    t.float  "vitamine"
-    t.float  "vitamind"
-    t.float  "vitamink"
-    t.float  "lipids"
-    t.float  "saturatedfats"
-    t.float  "monounsaturated"
-    t.float  "polyunsaturated"
-    t.float  "trans"
-    t.float  "cholesterol"
-    t.float  "aminoacids"
-  end
-
-  create_table "nutrients", force: true do |t|
-    t.string   "name"
-    t.float    "value"
-    t.string   "unit"
-    t.integer  "food_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "nutrients", ["food_id"], name: "index_nutrients_on_food_id", using: :btree
-
-  create_table "test", force: true do |t|
     t.string "name"
     t.float  "water"
     t.float  "energy"
