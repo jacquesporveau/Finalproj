@@ -1,2 +1,35 @@
 class Food < ActiveRecord::Base
+  validates :water, uniqueness: true
+  validates :energy, uniqueness: true
+  validates :protein, uniqueness: true
+  validates :totallipidfat, uniqueness: true
+  validates :carbohydrate, uniqueness: true
+  validates :fiber, uniqueness: true
+  validates :minerals, uniqueness: true
+  validates :calcium, uniqueness: true
+  validates :iron, uniqueness: true
+  validates :magnesium, uniqueness: true
+  validates :phosphorus, uniqueness: true
+  validates :potassium, uniqueness: true
+  validates :sodium, uniqueness: true
+  validates :zinc, uniqueness: true
+  validates :vitaminc, uniqueness: true
+  validates :thiamin, uniqueness: true
+  validates :riboflavin, uniqueness: true
+  validates :niacin, uniqueness: true
+  validates :vitaminb6, uniqueness: true
+  validates :folate, uniqueness: true
+  validates :vitaminb12, uniqueness: true
+  validates :vitamine, uniqueness: true
+  validates :vitamink, uniqueness: true
+  validates :lipids, uniqueness: true
+  validates :saturatedfats, uniqueness: true
+  validates :monounsaturated, uniqueness: true
+  validates :polyunsaturated, uniqueness: true
+  validates :trans, uniqueness: true
+  validates :sodium, uniqueness: true
+  validates :zinc, uniqueness: true
+  validates :cholesterol, uniqueness: true
+  validates :aminoacids, uniqueness: true
+
 end
